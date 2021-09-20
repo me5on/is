@@ -1,26 +1,26 @@
-import arr from './arr.mod.js';
-import bgi from './bgi.mod.js';
-import bul from './bul.mod.js';
-import dat from './dat.mod.js';
-import empty from './empty.fn.js';
-import err from './err.mod.js';
-import fun from './fun.mod.js';
-import nil from './nil.mod.js';
-import num from './number.js';
-import obj from './obj.mod.js';
-import primitive from './primitive.fn.js';
-import prm from './prm.mod.js';
-import rgx from './rgx.mod.js';
-import str from './str.mod.js';
-import sym from './sym.mod.js';
-
-
-const {int, integer, flt, float, nan} = num;
+import empty from './_/empty.fn.js';
+import primitive from './_/primitive.fn.js';
+import arr from './arr/arr.mod.js';
+import bul from './bul/bul.mod.js';
+import dat from './dat/dat.mod.js';
+import err from './err/err.mod.js';
+import fun from './fun/fun.mod.js';
+import nil from './nil/nil.mod.js';
+import bgi from './num/bigint.fn.js';
+import flt from './num/float.fn.js';
+import int from './num/integer.fn.js';
+import nan from './num/nan.fn.js';
+import num from './num/num.mod.js';
+import obj from './obj/obj.mod.js';
+import prm from './prm/prm.mod.js';
+import rgx from './rgx/rgx.mod.js';
+import str from './str/str.mod.js';
+import sym from './sym/sym.mod.js';
 
 
 const is = (
 
-    _ => is // eslint-disable-line no-unused-vars
+    _ => is
 
 );
 
@@ -37,8 +37,8 @@ Object.assign(
         nil,
         bul, boolean: bul, bool: bul,
         nan,
-        int, integer,
-        flt, float,
+        int, integer: int,
+        flt, float:   flt,
         num, number:  num,
         bgi, bigint:  bgi, bint: bgi,
         sym, symbol:  sym,
