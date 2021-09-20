@@ -1,6 +1,6 @@
 {
   "name": "@me5on/is",
-  "version": "0.0.4",
+  "version": "0.0.5+5",
   "description": "IS",
   "repository": "https://github.com/me5on/is",
   "author": "azder <azhder@gmail.com>",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@jest/globals": "^27.2.0",
-    "@me5on/dv": "^0.0.2",
+    "@me5on/dv": "^0.0.3",
     "@sloy/eslint-config-import": "^0.0.1",
     "@sloy/eslint-config-recommended": "^0.1.1",
     "eslint": "^7.32.0",
