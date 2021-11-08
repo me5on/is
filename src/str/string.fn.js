@@ -1,9 +1,10 @@
-import sym from '../sym/sym.mod.js';
+import literal from './literal.fn.js';
+import wrapper from './wrapper.fn.js';
 
 
 const string = (
 
-    $ => !sym($) && `${$}` === $
+    $ => literal($) || wrapper($)
 
 );
 
