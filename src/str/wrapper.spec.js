@@ -15,7 +15,7 @@ describe('wrapper', () => {
 
     // noinspection JSPrimitiveTypeWrapperUsage
     it.each([
-        new Boolean(), new Boolean(true), new Boolean(false),
+        new String(), new String('asdf'),
     ])(
         'returns true for %p',
         $ => expect(wrapper).toMap(true, $),
@@ -23,11 +23,12 @@ describe('wrapper', () => {
 
     // noinspection JSPrimitiveTypeWrapperUsage
     it.each([
+        '', 'asdf', '', `${1 + 2}`,
         true, false,
         null, void (1),
-        0, NaN, 1n, '1', '',
+        0, NaN, 1n,
         [1], {a: 1}, /./u, [], {},
-        new String(), new Number(),
+        new Number(), new Boolean(),
         Symbol(''), () => void (1),
     ])(
         'returns false for %p',

@@ -2,36 +2,38 @@
 
 
 import {describe, expect, it} from '@jest/globals';
-import wrapper from './wrapper.fn.js';
+import string from './string.fn.js';
 
 
-describe('wrapper', () => {
+describe('string', () => {
 
 
     it(
         'is a function',
-        () => void expect(wrapper).toBeFun(),
+        () => void expect(string).toBeFun(),
     );
+
 
     // noinspection JSPrimitiveTypeWrapperUsage
     it.each([
-        new Boolean(), new Boolean(true), new Boolean(false),
+        '', 'asdf', '', `${1 + 2}`,
+        new String(), new String('asdf'),
     ])(
         'returns true for %p',
-        $ => expect(wrapper).toMap(true, $),
+        $ => expect(string).toMap(true, $),
     );
 
     // noinspection JSPrimitiveTypeWrapperUsage
     it.each([
         true, false,
         null, void (1),
-        0, NaN, 1n, '1', '',
+        0, NaN, 1n,
         [1], {a: 1}, /./u, [], {},
-        new String(), new Number(),
+        new Number(), new Boolean(),
         Symbol(''), () => void (1),
     ])(
         'returns false for %p',
-        $ => expect(wrapper).toMap(false, $),
+        $ => expect(string).toMap(false, $),
     );
 
 

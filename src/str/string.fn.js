@@ -1,10 +1,9 @@
-import literal from './literal.fn.js';
-import wrapper from './wrapper.fn.js';
+import sym from '../sym/sym.mod.js';
 
 
 const string = (
 
-    $ => literal($) || wrapper($)
+    $ => !sym($) && `${$}` === $ || $ instanceof String
 
 );
 

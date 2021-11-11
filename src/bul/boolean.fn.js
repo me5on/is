@@ -1,6 +1,6 @@
 const boolean = (
 
-    $ => true === $ || false === $
+    $ => true === $ || false === $ || $ instanceof Boolean
 
 );
 

@@ -14,8 +14,10 @@ describe('boolean', () => {
     );
 
 
+    // noinspection JSPrimitiveTypeWrapperUsage
     it.each([
         true, false,
+        new Boolean(), new Boolean(true), new Boolean(false),
     ])(
         'returns true for %p',
         $ => expect(boolean).toMap(true, $),
@@ -26,7 +28,7 @@ describe('boolean', () => {
         null, void (1),
         0, NaN, 1n, '1', '',
         [1], {a: 1}, /./u, [], {},
-        new String(), new Number(), new Boolean(),
+        new String(), new Number(),
         Symbol(''), () => void (1),
     ])(
         'returns false for %p',
