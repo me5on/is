@@ -1,15 +1,25 @@
-import p from '../_/primitive.fn.js';
-import a from '../arr/array.fn.js';
-import bw from '../bul/wrapper.fn.js';
-import nil from '../nil/nil.fn.js';
-import nw from '../num/wrapper.fn.js';
-import re from '../rgx/regex.fn.js';
-import sw from '../str/wrapper.fn.js';
+const toP = Object.getPrototypeOf;
+const toS = Function.prototype.call.bind(Object.prototype.toString);
+
+
+const TAG = '[object Object]';
 
 
 const plain = (
 
-    $ => !nil($) && !re($) && !p($) && !a($) && !sw($) && !bw($) && !nw($)
+    $ => {
+
+        if ('object' !== typeof $ || null === $) {
+            return false;
+        }
+
+        if (toP) {
+            const p = toP($);
+            return null === p || Object.prototype === p;
+        }
+
+        return TAG === toS($);
+    }
 
 );
 

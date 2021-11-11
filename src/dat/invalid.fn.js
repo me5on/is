@@ -1,10 +1,9 @@
-import fun from '../fun/fun.fn.js';
-import nan from '../num/nan.fn.js';
+const nan = Number.isNaN;
 
 
 const invalid = (
 
-    $ => fun($.getTime) && nan($.getTime())
+    $ => $ instanceof Date && nan($ - 0)
 
 );
 

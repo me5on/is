@@ -12,14 +12,16 @@ describe('plain', () => {
 
 
     it.each([
-        {}, {a: 1}, {[Symbol('')]: 2},
+        {}, {a: 1}, {[Symbol('')]: 2}, Object.create(null),
     ])(
         'returns true for %p',
         $ => expect(plain).toMap(true, $),
     );
 
+    // noinspection JSPrimitiveTypeWrapperUsage
     it.each([
-        /./u, 0, 'string',
+        // eslint-disable-next-line no-new-wrappers,no-undef
+        /./u, true, 0, 'string', new String(), globalThis,
     ])(
         'returns false for %p',
         $ => expect(plain).toMap(false, $),
