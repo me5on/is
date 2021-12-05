@@ -1,6 +1,6 @@
 {
   "name": "@me5on/is",
-  "version": "0.0.6+13",
+  "version": "0.0.7+15",
   "description": "IS",
   "repository": "https://github.com/me5on/is",
   "author": "azder <azhder@gmail.com>",
@@ -32,16 +32,17 @@
     "start": "npm run jst:wtch"
   },
   "devDependencies": {
-    "@jest/globals": "^27.3.1",
+    "@jest/globals": "^27.4.2",
     "@me5on/dv": "^0.0.3",
     "@sloy/eslint-config-import": "^0.0.1",
     "@sloy/eslint-config-recommended": "^0.1.1",
-    "eslint": "^8.2.0",
+    "@sloy/jest-setup": "^0.0.1",
+    "eslint": "^8.4.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "http-server": "^14.0.0",
     "husky": "^7.0.4",
-    "jest": "^27.3.1",
+    "jest": "^27.4.3",
     "nodemon": "^2.0.15",
     "npm-check-updates": "^12.0.2"
   }

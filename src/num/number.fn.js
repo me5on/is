@@ -1,6 +1,6 @@
 const number = (
 
-    $ => Number.isFinite($)
+    $ => Number.isFinite($) || ($ instanceof Number && Number.isFinite($.valueOf()))
 
 );
 

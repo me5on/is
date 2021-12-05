@@ -1,10 +1,11 @@
-/* eslint-disable no-magic-numbers,no-new-wrappers */
+/* eslint-disable no-magic-numbers,no-new-wrappers,max-lines-per-function */
 
 
 import {describe, expect, it} from '@jest/globals';
 import aggregate from './aggregate.fn.js';
 
 
+// eslint-disable-next-line max-lines-per-function
 describe('aggregate', () => {
 
 
