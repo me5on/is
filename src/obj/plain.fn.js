@@ -1,4 +1,3 @@
-const toP = Object.getPrototypeOf;
 const toS = Function.prototype.call.bind(Object.prototype.toString);
 
 
@@ -12,10 +11,11 @@ const plain = (
         if ('object' !== typeof $ || null === $) {
             return false;
         }
-
-        if (toP) {
-            const p = toP($);
-            return null === p || Object.prototype === p;
+        
+        const {prototype, getPrototypeOf} = Object;
+        if (getPrototypeOf) {
+            const p = getPrototypeOf($);
+            return null === p || prototype === p;
         }
 
         return TAG === toS($);

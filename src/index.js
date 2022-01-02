@@ -1,4 +1,5 @@
 import empty from './_/empty.fn.js';
+import iterable from './_/iterable.fn.js';
 import primitive from './_/primitive.fn.js';
 import arr from './arr/arr.mod.js';
 import bul from './bul/bul.mod.js';
@@ -54,8 +55,8 @@ Object.assign(
         prm, promise: prm, pr: prm,
         rgx, regex:   rgx, re: rgx, regexp: rgx,
 
-        // callable objects:
-        // Function
+        // callable or special syntax objects:
+        // Function, callable
 
         fun, function: fun, fn: fun,
 
@@ -63,6 +64,7 @@ Object.assign(
 
         empty,
         primitive,
+        iterable,
     },
 );
 

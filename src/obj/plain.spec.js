@@ -27,5 +27,10 @@ describe('plain', () => {
         $ => expect(plain).toMap(false, $),
     );
 
+    it('on missing getPrototypeOf uses toString as fallback', () => {
+        delete Object.getPrototypeOf;
+        expect(plain({})).toBe(true);
+    });
+
 
 });
